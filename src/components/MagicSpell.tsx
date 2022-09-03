@@ -27,7 +27,7 @@ const MagicSpell:FC <Props>= () => {
   
   const DisplayAllSpells = async () => {
     await setSpellList(MagicSpellData?.spells?.map((item, index) => {
-      return (<div key={index}>{item.name}</div>)
+      return (<div className="spell-container" key={index}>{item.name}</div>)
     }))
   }
   
@@ -37,12 +37,15 @@ const MagicSpell:FC <Props>= () => {
 
   
 return(
-  <div>
-    <h3>Magic spells</h3>
-    <div>{renderSpellList}</div>
+  <div className="spell-page-container">
+    <h3 className="spell-list-heading">Magic spells</h3>
+    <div className="spell-list-container"> <div className="spell-list">{renderSpellList}</div>  </div>
     {/*<div>{spellList.map((spell)=>{return(spell.)})}</div>*/}
+      <div className="spells-button-container">
     <button onClick={DisplayAllSpells}>Read all spells</button>
     <button onClick={ClearSpellList}>Clear All Spells</button>
+      </div>
+  
   </div>)
   
   
