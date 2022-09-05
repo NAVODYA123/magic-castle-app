@@ -6,6 +6,7 @@ import FavouriteMagicList from "./components/FavouriteMagicList.tsx";
 import MagicSpellDetails from "./components/MagicSpellDetails.tsx";
 import Header from "./components/header/Header.tsx";
 import React from "react";
+import HomePage from "./components/header/HomePage.tsx";
 
 function App() {
 
@@ -19,10 +20,13 @@ function App() {
         <ApolloProvider client={client}>
             <Header/>
             <Routes>
-                <Route path="/" element={<MagicSpellList/>} />
+                <Route path="/" element={<HomePage/>} />
             </Routes>
             <Routes>
-                <Route path="/home" element={<FavouriteMagicList/>} />
+                <Route path="/spell-room" element={<MagicSpellList/>} />
+            </Routes>
+            <Routes>
+                <Route path="/favourite-spells" element={<FavouriteMagicList/>} />
             </Routes>
             <Routes>
                 <Route path="/spell-information" element={<MagicSpellDetails/>} />
