@@ -4,6 +4,10 @@ import {useLocation, useNavigate} from "react-router-dom";
 import {useQuery} from "@apollo/client";
 import {GET_SPELL_DETAILS} from '../graphql/grapqlQueries'
 import './customStyles/customStyles.css'
+import { ThemeProvider } from '@mui/material/styles';
+import { Box,Container,Button,Typography  } from '@mui/material'
+// @ts-ignore
+import MagicCastleTheme from "./customStyles/theme/MagicCastleTheme.tsx";
 
 type magicDamage = {
   name:string,
@@ -63,10 +67,19 @@ const MagicSpellDetails:FC = () => {
  
   
   return(
+    <ThemeProvider theme={MagicCastleTheme}>
     <div className="spell-information">
     <div className="spell-detail-container">
     <div className="spell-details-list">
-    <div className="spell-detail-row"><div className="spell-detail-spell-name">{MagicSpellData?.spell?.name}</div></div>
+    <div className="spell-detail-row">
+      <Typography variant='h6'
+                  sx={{
+                    width: '50%',
+                    display: 'flex',
+                    justifyContent:'flex-start',
+    
+                  }}
+      className="spell-detail-spell-name">{MagicSpellData?.spell?.name}</Typography> </div>
     <div className="spell-detail-row"><div className="spell-detail-cell-left">School Name</div><div className="spell-detail-cell-right">{MagicSpellData?.spell?.school.name} </div></div>
     <div className="spell-detail-row"><div className="spell-detail-cell-left">Duration</div><div className="spell-detail-cell-right">{MagicSpellData?.spell?.duration} </div></div>
     <div className="spell-detail-row"><div className="spell-detail-cell-left">Material</div><div className="spell-detail-cell-right">{MagicSpellData?.spell?.material ?? 'none'} </div></div>
@@ -75,10 +88,11 @@ const MagicSpellDetails:FC = () => {
     <div className="spell-detail-row"><div className="spell-detail-cell-left">HigherLevel</div><div className="spell-detail-cell-right">{MagicSpellData?.spell?.higher_level ?? 'none'} </div></div>
     <div className="spell-detail-row"><div className="spell-detail-cell-left">Damage type</div><div className="spell-detail-cell-right">test</div></div>
       </div>
-    <button className="back-button" onClick={() => navigate(-1)}>Go Back</button>
+    <Button className="back-button" onClick={() => navigate(-1)}>Go Back</Button>
     
   </div>
  </div>
+    </ThemeProvider>
   )
   
 }

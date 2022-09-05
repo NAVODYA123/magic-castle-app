@@ -36,6 +36,16 @@
   height: 50px;
 }
 
+.spell-list::-webkit-scrollbar {
+  width: 10px;
+}
 
+.spell-list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
 
-
+.spell-list::-webkit-scrollbar-thumb {
+  background: #ff4162;
+  border-radius: 10px;
+}
