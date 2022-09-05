@@ -9,8 +9,6 @@ import { sizing } from '@mui/system';
 // @ts-ignore
 import MagicCastleTheme from "../customStyles/theme/MagicCastleTheme.tsx";
 
-
-
 const HomePage = () => {
   
   const navigate = useNavigate()
