@@ -2,8 +2,10 @@ import './App.css';
 import MagicSpellList from "./components/MagicSpellList.tsx";
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { Route, Routes } from 'react-router-dom';
-import MagicCastleHome from "./components/MagicCastleHome.tsx";
+import FavouriteMagicList from "./components/FavouriteMagicList.tsx";
 import MagicSpellDetails from "./components/MagicSpellDetails.tsx";
+import Header from "./components/header/Header.tsx";
+import React from "react";
 
 function App() {
 
@@ -15,11 +17,12 @@ function App() {
   return (
     <div className="App">
         <ApolloProvider client={client}>
+            <Header/>
             <Routes>
                 <Route path="/" element={<MagicSpellList/>} />
             </Routes>
             <Routes>
-                <Route path="/home" element={<MagicCastleHome/>} />
+                <Route path="/home" element={<FavouriteMagicList/>} />
             </Routes>
             <Routes>
                 <Route path="/spell-information" element={<MagicSpellDetails/>} />

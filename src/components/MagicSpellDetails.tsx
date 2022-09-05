@@ -3,6 +3,7 @@ import {React,FC, useState,useEffect} from 'react'
 import {useLocation, useNavigate} from "react-router-dom";
 import {useQuery} from "@apollo/client";
 import {GET_SPELL_DETAILS} from '../graphql/grapqlQueries'
+import './customStyles/customStyles.css'
 
 type magicDamage = {
   name:string,
@@ -62,22 +63,23 @@ const MagicSpellDetails:FC = () => {
  
   
   return(
+    <div className="spell-information">
     <div className="spell-detail-container">
-     <div className="spell-detail-row"><div>{MagicSpellData?.spell?.name}</div></div>
-      <div className="spell-detail-row"><div>School Name</div><div>{MagicSpellData?.spell?.school.name} </div></div>
-    <div className="spell-detail-row"><div>Duration</div><div>{MagicSpellData?.spell?.duration} </div></div>
-    <div className="spell-detail-row"><div>Material</div><div>{MagicSpellData?.spell?.material ?? 'none'} </div></div>
-    <div className="spell-detail-row"><div>Range</div><div>{MagicSpellData?.spell?.range} </div></div>
-    <div className="spell-detail-row"><div>Level</div><div>{MagicSpellData?.spell?.level} </div></div>
-    <div className="spell-detail-row"><div>HigherLevel</div><div>{MagicSpellData?.spell?.higher_level ?? 'none'} </div></div>
+    <div className="spell-details-list">
+    <div className="spell-detail-row"><div className="spell-detail-spell-name">{MagicSpellData?.spell?.name}</div></div>
+    <div className="spell-detail-row"><div className="spell-detail-cell-left">School Name</div><div className="spell-detail-cell-right">{MagicSpellData?.spell?.school.name} </div></div>
+    <div className="spell-detail-row"><div className="spell-detail-cell-left">Duration</div><div className="spell-detail-cell-right">{MagicSpellData?.spell?.duration} </div></div>
+    <div className="spell-detail-row"><div className="spell-detail-cell-left">Material</div><div className="spell-detail-cell-right">{MagicSpellData?.spell?.material ?? 'none'} </div></div>
+    <div className="spell-detail-row"><div className="spell-detail-cell-left">Range</div><div className="spell-detail-cell-right">{MagicSpellData?.spell?.range} </div></div>
+    <div className="spell-detail-row"><div className="spell-detail-cell-left">Level</div><div className="spell-detail-cell-right">{MagicSpellData?.spell?.level} </div></div>
+    <div className="spell-detail-row"><div className="spell-detail-cell-left">HigherLevel</div><div className="spell-detail-cell-right">{MagicSpellData?.spell?.higher_level ?? 'none'} </div></div>
+    <div className="spell-detail-row"><div className="spell-detail-cell-left">Damage type</div><div className="spell-detail-cell-right">test</div></div>
+      </div>
+    <button className="back-button" onClick={() => navigate(-1)}>Go Back</button>
     
-    <div className="spell-detail-row"><div>Damage type</div><div></div>
-      <div></div><div>level </div><div>damage</div>
-      <div>Damage at character level</div><div>level </div><div>damage</div>
-    </div>
-    <button onClick={() => navigate(-1)}>Go Back</button>
-    
-  </div>)
+  </div>
+ </div>
+  )
   
 }
 
