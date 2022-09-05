@@ -1,6 +1,7 @@
 // @ts-ignore
 import {React} from 'react'
 import {useNavigate} from "react-router-dom";
+import HomePageMagic from "./HomePageMagic";
 
 const HomePage = () => {
   
@@ -14,6 +15,7 @@ const HomePage = () => {
   return (
     <div>
     <div>Welcome to magic castle</div>
+      <div><HomePageMagic/></div>
     <button onClick={()=>RedirectToSpellRoom()}>Visit spell room</button>
   </div>
   )

@@ -6,7 +6,7 @@ import FavouriteMagicList from "./components/FavouriteMagicList.tsx";
 import MagicSpellDetails from "./components/MagicSpellDetails.tsx";
 import Header from "./components/header/Header.tsx";
 import React from "react";
-import HomePage from "./components/header/HomePage.tsx";
+import HomePage from "./components/homePage/HomePage.tsx";
 
 function App() {
 
