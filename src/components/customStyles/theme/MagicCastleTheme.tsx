@@ -15,6 +15,9 @@ const MagicCastleTheme = createTheme({
     h2:{
       fontFamily: 'Harry Potter'
     },
+    h6:{
+      fontFamily: 'Harry Potter'
+    },
     button: {
       fontFamily:'Xiphos',
       fontSize:'24px'
