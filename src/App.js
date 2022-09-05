@@ -7,6 +7,8 @@ import MagicSpellDetails from "./components/MagicSpellDetails.tsx";
 import Header from "./components/header/Header.tsx";
 import React from "react";
 import HomePage from "./components/homePage/HomePage.tsx";
+import MagicCastleTheme from "./components/customStyles/theme/MagicCastleTheme.tsx";
+import { ThemeProvider } from '@mui/material/styles';
 
 function App() {
 
@@ -17,8 +19,8 @@ function App() {
 
   return (
     <div className="App">
+        <ThemeProvider theme={MagicCastleTheme}>
         <ApolloProvider client={client}>
-            <Header/>
             <Routes>
                 <Route path="/" element={<HomePage/>} />
             </Routes>
@@ -32,6 +34,7 @@ function App() {
                 <Route path="/spell-information" element={<MagicSpellDetails/>} />
             </Routes>
         </ApolloProvider>
+    </ThemeProvider>
     </div>
   );
 }
