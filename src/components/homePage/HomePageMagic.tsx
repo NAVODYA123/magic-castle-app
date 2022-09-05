@@ -5,7 +5,7 @@ const HomePageMagic = () => {
 return(
   <div>
   
-  <img src={} alt={}/>
+  <img src="" alt=""/>
   
   
 </div>)

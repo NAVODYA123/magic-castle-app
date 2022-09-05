@@ -1,7 +1,7 @@
 // @ts-ignore
 import {React} from 'react'
 import {useNavigate} from "react-router-dom";
-import HomePageMagic from "./HomePageMagic";
+import HomePageMagic from "./HomePageMagic.tsx";
 
 const HomePage = () => {
   
