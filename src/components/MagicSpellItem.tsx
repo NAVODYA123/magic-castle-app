@@ -5,7 +5,9 @@ import {useNavigate} from "react-router-dom";
 import MagicSpellDetails from './MagicSpellDetails.tsx';
 import {FavouritesContext} from '../context/FavouritesContext.js'
 import {ThemeProvider} from '@mui/material/styles';
-import {Box, Container, Button, Typography} from '@mui/material'
+import {Box, Container, Button, Typography,Fab } from '@mui/material'
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 // @ts-ignore
 import MagicCastleTheme from "./customStyles/theme/MagicCastleTheme.tsx";
 
@@ -58,21 +60,21 @@ const MagicSpellItem: FC<Props> = ({spellName, spellIndex}) => {
              
            }}
         >{spellName}</Typography>
-        <Box sx={{width: '50%'}}>
-          <Button sx={{
-            height: '24px',
-            fontSize: '14px'
-            
-          }} variant='contained' className="View-detail-button" onClick={(e) => viewDetails(spellIndex, e)}>View
-            details</Button>
+        <Box sx={{width: '50%', display:'flex', justifyContent:'space-around', alignItems:'center'}}>
           <Button
-            sx={{
-              height: '24px',
-              fontSize: '14px',
-              color:'#ff4162',
-            }}
-            variant='outlined' className="View-detail-button" onClick={(e) => AddToFavourites(spellName, e)}>Favourites
-            list</Button>
+            size='small' variant='contained' className="View-detail-button" onClick={(e) => viewDetails(spellIndex, e)}>View
+            details</Button>
+          <Fab  size="small" aria-label="add" onClick={(e) => AddToFavourites(spellName, e)}>
+            <FavoriteOutlinedIcon sx={{ color: 'primary.main'}} />
+          </Fab>
+          {/*<Button*/}
+          {/*  sx={{*/}
+          {/*    height: '24px',*/}
+          {/*    fontSize: '14px',*/}
+          {/*    color:'#ff4162',*/}
+          {/*  }}*/}
+          {/*  variant='outlined' className="View-detail-button" onClick={(e) => AddToFavourites(spellName, e)}>Favourites*/}
+          {/*  list</Button>*/}
         </Box>
       </Box>
     </ThemeProvider>

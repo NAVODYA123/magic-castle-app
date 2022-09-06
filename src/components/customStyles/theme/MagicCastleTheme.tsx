@@ -20,7 +20,7 @@ const MagicCastleTheme = createTheme({
     },
     button: {
       fontFamily:'Xiphos',
-      fontSize:'24px'
+     
     }
   },
   
