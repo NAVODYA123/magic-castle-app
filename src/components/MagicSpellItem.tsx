@@ -1,13 +1,13 @@
 // @ts-ignore
 import {React, FC, useState, useContext} from 'react'
 import {useNavigate} from "react-router-dom";
-// @ts-ignore
-import MagicSpellDetails from './MagicSpellDetails.tsx';
-import {FavouritesContext} from '../context/FavouritesContext.js'
+import MagicSpellDetails from './MagicSpellDetails';
+import {FavouritesContext} from '../context/FavouritesContext'
 import {ThemeProvider} from '@mui/material/styles';
-import {Box, Container, Button, Typography} from '@mui/material'
-// @ts-ignore
-import MagicCastleTheme from "./customStyles/theme/MagicCastleTheme.tsx";
+import {Box, Container, Button, Typography,Fab } from '@mui/material'
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import MagicCastleTheme from "./customStyles/theme/MagicCastleTheme";
 
 
 type Props = {
@@ -15,6 +15,7 @@ type Props = {
   spellIndex: string
 }
 
+type favList = string[]
 
 const MagicSpellItem: FC<Props> = ({spellName, spellIndex}) => {
   const navigate = useNavigate();
@@ -24,18 +25,18 @@ const MagicSpellItem: FC<Props> = ({spellName, spellIndex}) => {
   const {favoritesList, setFavouritesList} = useContext(FavouritesContext)
   
   
-  const viewDetails = (spellIndex, e) => {
+  const viewDetails = (spellIndex:string, e:any) => {
     e.preventDefault()
     navigate("/spell-information", {state: {selectedSpellIndex: spellIndex}})
     console.log('spell index printed ', spellIndex)
     return (<MagicSpellDetails/>)
   }
   
-  const AddToFavourites = (spellName, e) => {
+  const AddToFavourites = (spellName:string, e:any) => {
     e.preventDefault()
     const alreadyInList = favoritesList.includes(spellName)
     
-    !alreadyInList ? setFavouritesList((prevFavouriteList) => [...prevFavouriteList, spellName])
+    !alreadyInList ? setFavouritesList((prevFavouriteList:favList) => [...prevFavouriteList, spellName])
       : alert('Already added to list favourites')
     
     console.log(favoritesList)
@@ -55,24 +56,24 @@ const MagicSpellItem: FC<Props> = ({spellName, spellIndex}) => {
              width: '50%',
              display: 'flex',
              justifyContent:'flex-start',
-             
+             alignItems:'center'
            }}
         >{spellName}</Typography>
-        <Box sx={{width: '50%'}}>
-          <Button sx={{
-            height: '24px',
-            fontSize: '14px'
-            
-          }} variant='contained' className="View-detail-button" onClick={(e) => viewDetails(spellIndex, e)}>View
-            details</Button>
+        <Box sx={{width: '50%', display:'flex', justifyContent:'space-around', alignItems:'center'}}>
           <Button
-            sx={{
-              height: '24px',
-              fontSize: '14px',
-              color:'#ff4162',
-            }}
-            variant='outlined' className="View-detail-button" onClick={(e) => AddToFavourites(spellName, e)}>Favourites
-            list</Button>
+            size='small' variant='contained' color='secondary' className="View-detail-button" onClick={(e) => viewDetails(spellIndex, e)}>View
+            details</Button>
+          <Fab  size="small" aria-label="add" onClick={(e) => AddToFavourites(spellName, e)}>
+            <FavoriteOutlinedIcon sx={{ color: 'primary.main'}} />
+          </Fab>
+          {/*<Button*/}
+          {/*  sx={{*/}
+          {/*    height: '24px',*/}
+          {/*    fontSize: '14px',*/}
+          {/*    color:'#ff4162',*/}
+          {/*  }}*/}
+          {/*  variant='outlined' className="View-detail-button" onClick={(e) => AddToFavourites(spellName, e)}>Favourites*/}
+          {/*  list</Button>*/}
         </Box>
       </Box>
     </ThemeProvider>
