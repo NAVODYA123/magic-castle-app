@@ -21,7 +21,7 @@ function App() {
     <div className="App">
         <ThemeProvider theme={MagicCastleTheme}>
         <ApolloProvider client={client}>
-            <Routes>
+           <Routes>
                 <Route path="/" element={<HomePage/>} />
             </Routes>
             <Routes>
