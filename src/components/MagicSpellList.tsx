@@ -94,6 +94,7 @@ return(
     </Box></Paper>
     <Box sx={{ width:'50%', paddingTop:'20px'}} className="spells-button-container">
     <Button sx={{
+      margin:'10px',
       '&:hover': {
         backgroundColor: '#000000',
         color:'#ff4162',
@@ -106,6 +107,7 @@ return(
       backgroundColor:'#ffffff',
       color:'#000000',
       borderColor:'#000000',
+      margin:'10px',
       '&:hover': {
         backgroundColor: '#000000',
         color:'#ffffff',

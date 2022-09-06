@@ -49,23 +49,24 @@ const MagicSpellItem: FC<Props> = ({spellName, spellIndex}) => {
       <Box className="spell-container-wrapper"
            sx={{
              display: 'flex',
-             flexDirection: 'row',
+             flexDirection: {xs:'column', sm:'row',md:'row',lg:'row'},
              justifyContent: 'space-between',
-             height: '50px'
+             height: {xs:'auto', sm:'auto',md:'50px',lg:'50px'},
+             maxHeight:{xs:'auto', sm:'70px',md:'50px',lg:'50px'}
            }}>
         <Typography className="spell-container" variant='h6'
            sx={{
-             width: '50%',
+             width: {lg:'50%',md:'50%',sm:'100%',xs:'100%'},
              display: 'flex',
              justifyContent:'flex-start',
              alignItems:'center'
            }}
         >{spellName}</Typography>
-        <Box sx={{width: '50%', display:'flex', justifyContent:'space-around', alignItems:'center'}}>
+        <Box sx={{width: {lg:'50%', md:'50%', sm:'100%',xs:'100%'}, display:'flex', justifyContent:'space-around', alignItems:'center'}}>
           <Button
-            size='small' variant='contained' color='secondary' className="View-detail-button" onClick={(e) => viewDetails(spellIndex, e)}>View
+            size='small' variant='contained' color='info' className="View-detail-button" onClick={(e) => viewDetails(spellIndex, e)}>View
             details</Button>
-          <Fab  size="small" aria-label="add" onClick={(e) => AddToFavourites(spellName, e)}>
+          <Fab  color='info' size="small" aria-label="add" onClick={(e) => AddToFavourites(spellName, e)}>
             <FavoriteOutlinedIcon sx={{ color: 'primary.main'}} />
           </Fab>
           {/*<Button*/}

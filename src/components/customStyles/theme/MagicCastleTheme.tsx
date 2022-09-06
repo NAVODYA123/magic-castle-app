@@ -4,7 +4,7 @@ import { createTheme } from '@mui/material/styles';
 const breakpoints = {
   values: {
     xs: 390,
-    sm: 600,
+    sm: 700,
     md: 900,
     lg: 1200,
     xl: 1536,
