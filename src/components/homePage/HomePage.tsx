@@ -6,8 +6,8 @@ import HomePageMagic from "./HomePageMagic.tsx";
 import { ThemeProvider } from '@mui/material/styles';
 import { Box,Container,Button,Typography  } from '@mui/material'
 import { sizing } from '@mui/system';
-// @ts-ignore
-import MagicCastleTheme from "../customStyles/theme/MagicCastleTheme.tsx";
+
+import MagicCastleTheme from "../customStyles/theme/MagicCastleTheme";
 
 const HomePage = () => {
   

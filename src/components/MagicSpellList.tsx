@@ -21,6 +21,13 @@ import CircularProgress from '@mui/material/CircularProgress';
 type Props = {
 
 }
+
+export type spells = {
+  index : string
+  name: string
+}
+
+
 const MagicSpellList:FC <Props>= () => {
   const navigate = useNavigate()
   const [renderSpellList, setSpellList] = useState([''])
@@ -32,7 +39,7 @@ const MagicSpellList:FC <Props>= () => {
   if (MagicSpellListError) return <p>Error :</p>;
 
   const DisplayAllSpells = async () => {
-    await setSpellList(MagicSpellListData?.spells?.map((item, index) => {
+    await setSpellList(MagicSpellListData?.spells?.map((item:spells, index:number) => {
       return (
         <MagicSpellItem key={index} spellName ={item.name}  spellIndex={item.index} />
       )
@@ -69,6 +76,7 @@ return(
              width:'50%',
              display:'flex',
              justifyContent:'center',
+             backgroundColor:'#DCCB9F'
             
     }} >
     <Box className="spell-list-container"

@@ -1,6 +1,7 @@
 // @ts-ignore
 import React, {useContext} from 'react'
 import {FavouritesContext} from '../context/FavouritesContext.js'
+import {spells} from "./MagicSpellList";
 
 const FavouriteMagicList = () => {
   
@@ -8,7 +9,7 @@ const FavouriteMagicList = () => {
   
   return(<div>
   <div>Favourite Magic Spell List</div>
-  <div>{favoritesList.map((item)=>{
+  <div>{favoritesList.map((item:string)=>{
     return (<div>{item}</div>)
   })}</div>
   
