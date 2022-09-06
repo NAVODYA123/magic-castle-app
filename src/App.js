@@ -4,7 +4,6 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { Route, Routes } from 'react-router-dom';
 import FavouriteMagicList from "./components/FavouriteMagicList.tsx";
 import MagicSpellDetails from "./components/MagicSpellDetails.tsx";
-import Header from "./components/header/Header.tsx";
 import React from "react";
 import HomePage from "./components/homePage/HomePage.tsx";
 import MagicCastleTheme from "./components/customStyles/theme/MagicCastleTheme.tsx";

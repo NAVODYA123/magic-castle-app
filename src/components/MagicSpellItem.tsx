@@ -69,15 +69,7 @@ const MagicSpellItem: FC<Props> = ({spellName, spellIndex}) => {
           <Fab  color='info' size="small" aria-label="add" onClick={(e) => AddToFavourites(spellName, e)}>
             <FavoriteOutlinedIcon sx={{ color: 'primary.main'}} />
           </Fab>
-          {/*<Button*/}
-          {/*  sx={{*/}
-          {/*    height: '24px',*/}
-          {/*    fontSize: '14px',*/}
-          {/*    color:'#ff4162',*/}
-          {/*  }}*/}
-          {/*  variant='outlined' className="View-detail-button" onClick={(e) => AddToFavourites(spellName, e)}>Favourites*/}
-          {/*  list</Button>*/}
-        </Box>
+          </Box>
       </Box>
     </ThemeProvider>
   )
