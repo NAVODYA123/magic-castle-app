@@ -2,15 +2,12 @@
 import React, {FC,useState} from 'react'
 import { useQuery } from '@apollo/client';
 import {GET_SPELL_LIST} from '../graphql/grapqlQueries.js'
-// @ts-ignore
-import MagicSpellItem from './MagicSpellItem.tsx';
-import {FavouritesContext} from '../context/FavouritesContext.js'
-// @ts-ignore
-import FavouriteMagicList from './FavouriteMagicList.tsx';
+import MagicSpellItem from './MagicSpellItem';
+import {FavouritesContext} from '../context/FavouritesContext'
+import FavouriteMagicList from './FavouriteMagicList';
 import { ThemeProvider } from '@mui/material/styles';
 import { Box,Container,Button,Typography  } from '@mui/material'
-// @ts-ignore
-import MagicCastleTheme from "./customStyles/theme/MagicCastleTheme.tsx";
+import MagicCastleTheme from "./customStyles/theme/MagicCastleTheme";
 import './customStyles/customStyles.css'
 import { Paper } from '@mui/material';
 // @ts-ignore

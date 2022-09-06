@@ -1,6 +1,6 @@
 // @ts-ignore
 import React, {useContext} from 'react'
-import {FavouritesContext} from '../context/FavouritesContext.js'
+import {FavouritesContext} from '../context/FavouritesContext'
 import {spells} from "./MagicSpellList";
 
 const FavouriteMagicList = () => {
