@@ -4,7 +4,7 @@ import { createTheme } from '@mui/material/styles';
 const breakpoints = {
   values: {
     xs: 390,
-    sm: 600,
+    sm: 700,
     md: 900,
     lg: 1200,
     xl: 1536,
@@ -20,7 +20,12 @@ const MagicCastleTheme = createTheme({
       contrastText: '#ffffff',
     },
     secondary:{
-      main : '#000000'
+      main : '#000000',
+      contrastText: '#ffffff',
+    },
+    info:{
+      main : '#000000',
+      contrastText:'#ff4162'
     }
   },
   typography: {
