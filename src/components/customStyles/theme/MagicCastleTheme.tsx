@@ -20,7 +20,12 @@ const MagicCastleTheme = createTheme({
       contrastText: '#ffffff',
     },
     secondary:{
-      main : '#000000'
+      main : '#000000',
+      contrastText: '#ffffff',
+    },
+    info:{
+      main : '#000000',
+      contrastText:'#ff4162'
     }
   },
   typography: {
