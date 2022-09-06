@@ -17,6 +17,7 @@ type Props = {
   spellIndex: string
 }
 
+type favList = string[]
 
 const MagicSpellItem: FC<Props> = ({spellName, spellIndex}) => {
   const navigate = useNavigate();
@@ -26,18 +27,18 @@ const MagicSpellItem: FC<Props> = ({spellName, spellIndex}) => {
   const {favoritesList, setFavouritesList} = useContext(FavouritesContext)
   
   
-  const viewDetails = (spellIndex, e) => {
+  const viewDetails = (spellIndex:string, e:any) => {
     e.preventDefault()
     navigate("/spell-information", {state: {selectedSpellIndex: spellIndex}})
     console.log('spell index printed ', spellIndex)
     return (<MagicSpellDetails/>)
   }
   
-  const AddToFavourites = (spellName, e) => {
+  const AddToFavourites = (spellName:string, e:any) => {
     e.preventDefault()
     const alreadyInList = favoritesList.includes(spellName)
     
-    !alreadyInList ? setFavouritesList((prevFavouriteList) => [...prevFavouriteList, spellName])
+    !alreadyInList ? setFavouritesList((prevFavouriteList:favList) => [...prevFavouriteList, spellName])
       : alert('Already added to list favourites')
     
     console.log(favoritesList)
