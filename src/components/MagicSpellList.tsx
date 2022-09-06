@@ -10,10 +10,9 @@ import { Box,Container,Button,Typography  } from '@mui/material'
 import MagicCastleTheme from "./customStyles/theme/MagicCastleTheme";
 import './customStyles/customStyles.css'
 import { Paper } from '@mui/material';
-// @ts-ignore
-import scroll from '../bg_scroll_1.jpeg'
 import {useNavigate} from "react-router-dom";
 import CircularProgress from '@mui/material/CircularProgress';
+import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 
 type Props = {
 
@@ -47,14 +46,12 @@ const MagicSpellList:FC <Props>= () => {
     await setSpellList([''])
   }
   
-  const imagUrl = ''
-  
-  const paperBackground = {
-    paperContainer: {
-      backgroundImage: `url(${scroll})`,
-     
-    }
-  }
+  // const paperBackground = {
+  //   paperContainer: {
+  //     backgroundImage: `url(${scroll})`,
+  //
+  //   }
+  // }
   
 return(
   <ThemeProvider theme={MagicCastleTheme}>
@@ -67,7 +64,9 @@ return(
          justifyContent:'center',
          alignItems:'center'
   }}>
-    <Typography variant='h2' color='primary.main' >Magic spells</Typography>
+    <Typography sx={{
+      paddingBottom:'20px'
+    }} variant='h2' color='primary.main' >Magic spells</Typography>
     <Paper elevation={5}
            sx={{
              width:'50%',
@@ -93,7 +92,7 @@ return(
         }}
       >{renderSpellList}</Box>
     </Box></Paper>
-    <Box sx={{ width:'50%'}} className="spells-button-container">
+    <Box sx={{ width:'50%', paddingTop:'20px'}} className="spells-button-container">
     <Button sx={{
       '&:hover': {
         backgroundColor: '#000000',
@@ -115,7 +114,10 @@ return(
       
     }} size='medium' variant='outlined' onClick={ClearSpellList}>Clear all Spells</Button>
     </Box>
-    <Button className="back-button" onClick={() => navigate(-1)}>Go Back</Button>
+    <Button sx={{
+      fontSize: '18px',
+      paddingLeft: '20px'
+    }} variant='text' startIcon={<ArrowBackRoundedIcon/>} onClick={() => navigate(-1)}>Go Back</Button>
   </Box>
  </FavouritesContext.Provider>
   </ThemeProvider>
