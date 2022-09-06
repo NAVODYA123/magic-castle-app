@@ -58,12 +58,12 @@ const MagicSpellItem: FC<Props> = ({spellName, spellIndex}) => {
              width: '50%',
              display: 'flex',
              justifyContent:'flex-start',
-             
+             alignItems:'center'
            }}
         >{spellName}</Typography>
         <Box sx={{width: '50%', display:'flex', justifyContent:'space-around', alignItems:'center'}}>
           <Button
-            size='small' variant='contained' className="View-detail-button" onClick={(e) => viewDetails(spellIndex, e)}>View
+            size='small' variant='contained' color='secondary' className="View-detail-button" onClick={(e) => viewDetails(spellIndex, e)}>View
             details</Button>
           <Fab  size="small" aria-label="add" onClick={(e) => AddToFavourites(spellName, e)}>
             <FavoriteOutlinedIcon sx={{ color: 'primary.main'}} />
