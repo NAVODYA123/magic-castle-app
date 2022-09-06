@@ -16,4 +16,3 @@
 3. Click on clear spells button to clear the list
 4. Click on favourites button to add spells to favourites list
 
-### `npm run build`
