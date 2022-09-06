@@ -24,10 +24,10 @@ const MagicCastleTheme = createTheme({
     }
   },
   typography: {
-    h2:{
+    h2: {
       fontFamily: 'Harry Potter'
     },
-    h6:{
+    h6: {
       fontFamily: 'Harry Potter',
         [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
         fontSize: '14px'
@@ -36,13 +36,14 @@ const MagicCastleTheme = createTheme({
         fontSize: '18px'
       }
     },
+    body1: {
+      fontFamily: 'Witches Magic',
+      color:'#ffffff'
+    },
     button: {
       fontFamily:'Xiphos',
-     
     }
   },
-  
-  
 })
 
 
