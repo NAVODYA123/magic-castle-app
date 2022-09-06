@@ -13,6 +13,8 @@ import { Paper } from '@mui/material';
 import {useNavigate} from "react-router-dom";
 import CircularProgress from '@mui/material/CircularProgress';
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
+import IconButton from "@mui/material/IconButton";
+import FavoriteBorderSharpIcon from "@mui/icons-material/FavoriteBorderSharp";
 
 type Props = {
 
@@ -30,6 +32,7 @@ const MagicSpellList:FC <Props>= () => {
   
   const [favoritesList, setFavouritesList] =useState<any[]>([])
   
+  
   const { loading:MagicSpellListLoading, error:MagicSpellListError, data: MagicSpellListData } = useQuery(GET_SPELL_LIST);
   if (MagicSpellListLoading) return (<CircularProgress color="primary"/>);
   if (MagicSpellListError) return <p>Error :</p>;
@@ -46,12 +49,15 @@ const MagicSpellList:FC <Props>= () => {
     await setSpellList([''])
   }
   
-  // const paperBackground = {
-  //   paperContainer: {
-  //     backgroundImage: `url(${scroll})`,
-  //
-  //   }
-  // }
+  const ViewFavourites = async ()=>{
+    navigate("/favourite-spells")
+    
+    favoritesList.map((item, index:number )=>{
+      console.log('item',item)
+      return(<FavouriteMagicList key={index} spellName={item}/>)
+    })
+   
+  }
   
 return(
   <ThemeProvider theme={MagicCastleTheme}>
@@ -67,6 +73,9 @@ return(
     <Typography sx={{
       paddingBottom:'20px'
     }} variant='h2' color='primary.main' >Magic spells</Typography>
+    <IconButton sx={{ color: 'primary.main', width:'25%'}} onClick={ViewFavourites}><FavoriteBorderSharpIcon/></IconButton>
+  
+  
     <Paper elevation={5}
            sx={{
              width:'50%',
@@ -91,9 +100,13 @@ return(
           marginTop:'20px'
         }}
       >{renderSpellList}</Box>
+      
+      
     </Box></Paper>
+   
     <Box sx={{ width:'50%', paddingTop:'20px'}} className="spells-button-container">
     <Button sx={{
+      margin:'10px',
       '&:hover': {
         backgroundColor: '#000000',
         color:'#ff4162',
@@ -106,6 +119,7 @@ return(
       backgroundColor:'#ffffff',
       color:'#000000',
       borderColor:'#000000',
+      margin:'10px',
       '&:hover': {
         backgroundColor: '#000000',
         color:'#ffffff',
