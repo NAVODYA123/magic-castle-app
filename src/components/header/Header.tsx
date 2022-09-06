@@ -1,8 +1,7 @@
 // @ts-ignore
 import {React} from 'react'
 import '../customStyles/headerStyles.css'
-// @ts-ignore
-import MagicCastleTheme from "../customStyles/theme/MagicCastleTheme.tsx";
+import MagicCastleTheme from "../customStyles/theme/MagicCastleTheme";
 import {ThemeProvider} from '@mui/material/styles';
 import {Box, Container, Button, Typography,Fab } from '@mui/material'
 import CastleIcon from '@mui/icons-material/Castle';

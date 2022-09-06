@@ -6,8 +6,7 @@ import {GET_SPELL_DETAILS} from '../graphql/grapqlQueries'
 import './customStyles/customStyles.css'
 import { ThemeProvider } from '@mui/material/styles';
 import { Box,Container,Button,Typography  } from '@mui/material'
-// @ts-ignore
-import MagicCastleTheme from "./customStyles/theme/MagicCastleTheme.tsx";
+import MagicCastleTheme from "./customStyles/theme/MagicCastleTheme";
 import CircularProgress from "@mui/material/CircularProgress";
 
 type magicDamage = {

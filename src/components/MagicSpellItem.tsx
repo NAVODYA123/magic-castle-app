@@ -1,15 +1,13 @@
 // @ts-ignore
 import {React, FC, useState, useContext} from 'react'
 import {useNavigate} from "react-router-dom";
-// @ts-ignore
-import MagicSpellDetails from './MagicSpellDetails.tsx';
-import {FavouritesContext} from '../context/FavouritesContext.js'
+import MagicSpellDetails from './MagicSpellDetails';
+import {FavouritesContext} from '../context/FavouritesContext'
 import {ThemeProvider} from '@mui/material/styles';
 import {Box, Container, Button, Typography,Fab } from '@mui/material'
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-// @ts-ignore
-import MagicCastleTheme from "./customStyles/theme/MagicCastleTheme.tsx";
+import MagicCastleTheme from "./customStyles/theme/MagicCastleTheme";
 
 
 type Props = {
