@@ -29,7 +29,7 @@ const FavouriteMagicList: FC<Props> = ({spellName}) => {
       <Box className="spell-container-wrapper"
            sx={{
              display: 'flex',
-             flexDirection: {xs:'column', sm:'row',md:'row',lg:'row'},
+             flexDirection: {xs:'column', sm:'column',md:'column',lg:'column'},
              justifyContent: 'space-between',
              height: {xs:'auto', sm:'auto',md:'50px',lg:'50px'},
              maxHeight:{xs:'auto', sm:'70px',md:'50px',lg:'50px'}
