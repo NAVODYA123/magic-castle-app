@@ -38,10 +38,10 @@ const MagicSpellItem: FC<Props> = ({spellName, spellIndex}) => {
  
     !alreadyInList ? favoritesList.push(spellName) : favoritesList
       setFavouritesList(favoritesList)
+    alreadyInList ? alert('Already added to list favourites') : ''
     // !alreadyInList ? setFavouritesList((prevFavouriteList) => [...prevFavouriteList, spellName])
     //   : alert('Already added to list favourites')
-    
-    console.log(favoritesList)
+    // console.log(favoritesList)
   }
   
   return (

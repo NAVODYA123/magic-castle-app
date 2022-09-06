@@ -6,14 +6,14 @@ import {Typography} from "@mui/material";
 
 const FavouriteMagicList = () => {
   
-  // const {favoritesList} = useContext(FavouritesContext)
-  
+  const {favoritesList} = useContext(FavouritesContext)
+  console.log('favoritesList',favoritesList)
   return (
     <div>
       <Typography>Favourite Magic Spell List</Typography>
-      {/*<div>{favoritesList.length===!0 ? favoritesList.map((item: string) => {*/}
-      {/*  return (<div>{item}</div>)*/}
-      {/*}):'No favourites to show'}</div>*/}
+      <div>{(favoritesList.length)> 0 ? favoritesList.map((item: string) => {
+        return (<div key={item}>{item}</div>)
+      }):'No favourites to show'}</div>
       
     </div>
   )

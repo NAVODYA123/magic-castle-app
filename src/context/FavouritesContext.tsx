@@ -2,7 +2,7 @@ import React, {createContext} from 'react'
 import {FavouritesType} from "../types/favouritesType";
 
 const favouriteInitial:FavouritesType ={
-    favouriteList:[''],
+    favouriteList:[],
     setFavouritesList:()=>{}
 }
 
