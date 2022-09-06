@@ -8,6 +8,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { Box,Container,Button,Typography  } from '@mui/material'
 // @ts-ignore
 import MagicCastleTheme from "./customStyles/theme/MagicCastleTheme.tsx";
+import CircularProgress from "@mui/material/CircularProgress";
 
 type magicDamage = {
   name:string,
@@ -62,7 +63,7 @@ const MagicSpellDetails:FC = () => {
     data: MagicSpellData } = useQuery(GET_SPELL_DETAILS,{
     variables:{ index:itemIndex }
   });
-  if (MagicSpellLoading) return <p>Loading...</p>;
+  if (MagicSpellLoading) return (<CircularProgress color="primary"/>);;
   if (MagicSpellError) return <p>Error :</p>;
  
   

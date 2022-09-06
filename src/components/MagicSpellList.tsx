@@ -16,7 +16,7 @@ import { Paper } from '@mui/material';
 // @ts-ignore
 import scroll from '../bg_scroll_1.jpeg'
 import {useNavigate} from "react-router-dom";
-
+import CircularProgress from '@mui/material/CircularProgress';
 
 type Props = {
 
@@ -28,7 +28,7 @@ const MagicSpellList:FC <Props>= () => {
   const [favoritesList, setFavouritesList] =useState<any[]>([])
   
   const { loading:MagicSpellListLoading, error:MagicSpellListError, data: MagicSpellListData } = useQuery(GET_SPELL_LIST);
-  if (MagicSpellListLoading) return <p>Loading...</p>;
+  if (MagicSpellListLoading) return (<CircularProgress color="primary"/>);
   if (MagicSpellListError) return <p>Error :</p>;
 
   const DisplayAllSpells = async () => {
@@ -69,10 +69,8 @@ return(
              width:'50%',
              display:'flex',
              justifyContent:'center',
-             backgroundRepeat:'no-repeat',
-             backgroundPosition:'center',
-             backgroundSize:'cover'
-    }} style={paperBackground.paperContainer}>
+            
+    }} >
     <Box className="spell-list-container"
          sx={{
            width:'80%',
@@ -90,7 +88,7 @@ return(
         }}
       >{renderSpellList}</Box>
     </Box></Paper>
-    <div className="spells-button-container">
+    <Box sx={{ width:'50%'}} className="spells-button-container">
     <Button sx={{
       '&:hover': {
         backgroundColor: '#000000',
@@ -99,7 +97,7 @@ return(
         borderWidth:'2px',
         borderColor:'#ff4162'
       },
-    }} variant='contained' onClick={DisplayAllSpells}>Read all spells</Button>
+    }} size='medium' variant='contained' onClick={DisplayAllSpells}>Read all spells</Button>
     <Button sx={{
       backgroundColor:'#ffffff',
       color:'#000000',
@@ -110,8 +108,8 @@ return(
         borderColor:'#ffffff'
       }
       
-    }} variant='outlined' onClick={ClearSpellList}>Clear all Spells</Button>
-    </div>
+    }} size='medium' variant='outlined' onClick={ClearSpellList}>Clear all Spells</Button>
+    </Box>
     <Button className="back-button" onClick={() => navigate(-1)}>Go Back</Button>
   </Box>
  </FavouritesContext.Provider>
